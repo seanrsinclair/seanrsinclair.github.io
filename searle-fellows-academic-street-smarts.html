@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=windows-1252">
@@ -198,7 +198,7 @@
   }
 
   .stats-grid {
-    grid-template-columns: 1.3fr 0.8fr 1fr;
+    grid-template-columns: minmax(14rem, 1.6fr) repeat(3, minmax(7rem, 0.7fr));
     margin-top: 1rem;
     align-items: stretch;
   }
@@ -271,11 +271,67 @@
   }
 
   .stat-head {
+    color: var(--muted);
+    font-size: 0.82rem;
     font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
   }
 
   .stat-cell strong {
     font-size: 1.15rem;
+  }
+
+  .stat-cell.metric {
+    font-variant-numeric: tabular-nums;
+    text-align: center;
+  }
+
+  .stat-cell.gain strong {
+    color: var(--accent);
+  }
+
+  .survey-summary {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 13rem;
+    gap: 1rem;
+    margin-top: 1rem;
+    align-items: stretch;
+  }
+
+  .survey-note,
+  .gain-card {
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #ffffff;
+    padding: 1rem 1.1rem;
+  }
+
+  .survey-note p {
+    margin: 0;
+  }
+
+  .gain-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .gain-label {
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .gain-value {
+    color: var(--accent);
+    font-family: 'Buenard', serif;
+    font-size: 2.4rem;
+    line-height: 1;
+    margin-top: 0.35rem;
   }
 
   .callout {
@@ -306,9 +362,53 @@
     .two-col,
     .topics-grid,
     .stats-grid,
+    .survey-summary,
     .experience-grid,
     .principles-grid {
       grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+      display: block;
+    }
+
+    .stat-head {
+      display: none;
+    }
+
+    .stat-cell {
+      display: block;
+      border-bottom: 0;
+      padding: 0.55rem 0.8rem;
+    }
+
+    .stat-cell.topic {
+      margin-top: 0.9rem;
+      border-bottom: 0;
+      border-radius: 12px 12px 0 0;
+      font-weight: 700;
+    }
+
+    .stat-cell.metric {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      text-align: right;
+    }
+
+    .stat-cell.metric::before {
+      color: var(--muted);
+      content: attr(data-label);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    .stat-cell.row-end {
+      border-bottom: 1px solid var(--line);
+      border-radius: 0 0 12px 12px;
     }
 
     .hero,
@@ -346,6 +446,8 @@
             Before returning to graduate school, he spent two and a half years teaching mathematics, science, and
             English in rural Ghana with the Peace Corps, an experience that continues to shape his approach to inclusive
             participation, project-based learning, and classroom community.
+            
+            <br> </bf><a href="https://seanrsinclair.github.io/">[website]</a>
           </p>
         </div>
       </div>
@@ -460,35 +562,52 @@
         </div>
         <div>
           <p style="margin-top: 0;">
-            Early survey responses reinforced the need for this type of training by showing low confidence in several
-            core dimensions of academic professional development.
+            Before-and-after survey responses show both the initial gap and the gains students reported after the
+            course. The largest improvements appeared in job-market knowledge and finding fellowships or grants.
           </p>
         </div>
       </div>
 
       <div class="stats-grid">
         <div class="stat-head">Topic</div>
-        <div class="stat-head">Mean</div>
-        <div class="stat-head">% Neutral or Below 3</div>
+        <div class="stat-head">Before Mean</div>
+        <div class="stat-head">After Mean</div>
+        <div class="stat-head">Average Change</div>
 
-        <div class="stat-cell">Understanding academic job market</div>
-        <div class="stat-cell"><strong>2.25</strong></div>
-        <div class="stat-cell"><strong>91.7%</strong></div>
+        <div class="stat-cell topic">Understanding academic job market</div>
+        <div class="stat-cell metric" data-label="Before Mean"><strong>2.25</strong></div>
+        <div class="stat-cell metric" data-label="After Mean"><strong>4.13</strong></div>
+        <div class="stat-cell metric gain row-end" data-label="Average Change"><strong>+1.88</strong></div>
 
-        <div class="stat-cell">Where to find fellowships/grants</div>
-        <div class="stat-cell"><strong>2.33</strong></div>
-        <div class="stat-cell"><strong>83.3%</strong></div>
+        <div class="stat-cell topic">Where to find fellowships/grants</div>
+        <div class="stat-cell metric" data-label="Before Mean"><strong>2.33</strong></div>
+        <div class="stat-cell metric" data-label="After Mean"><strong>4.25</strong></div>
+        <div class="stat-cell metric gain row-end" data-label="Average Change"><strong>+1.92</strong></div>
 
-        <div class="stat-cell">Importance of professional service</div>
-        <div class="stat-cell"><strong>2.67</strong></div>
-        <div class="stat-cell"><strong>83.3%</strong></div>
+        <div class="stat-cell topic">Importance of professional service</div>
+        <div class="stat-cell metric" data-label="Before Mean"><strong>2.67</strong></div>
+        <div class="stat-cell metric" data-label="After Mean"><strong>4.13</strong></div>
+        <div class="stat-cell metric gain row-end" data-label="Average Change"><strong>+1.46</strong></div>
 
-        <div class="stat-cell">Ability to summarize or pitch research</div>
-        <div class="stat-cell"><strong>2.75</strong></div>
-        <div class="stat-cell"><strong>75.0%</strong></div>
+        <div class="stat-cell topic">Ability to summarize or pitch research</div>
+        <div class="stat-cell metric" data-label="Before Mean"><strong>2.75</strong></div>
+        <div class="stat-cell metric" data-label="After Mean"><strong>4.13</strong></div>
+        <div class="stat-cell metric gain row-end" data-label="Average Change"><strong>+1.38</strong></div>
       </div>
 
-      <p class="callout">Students lack knowledge about the academic system and core skills, but these are rarely taught.</p>
+      <div class="survey-summary">
+        <div class="survey-note">
+          <p>
+            Students began with low confidence in several hidden-curriculum topics and ended the course reporting
+            substantial improvements across every measured area.
+          </p>
+        </div>
+        <div class="gain-card">
+          <div class="gain-label">Average Gain</div>
+          <div class="gain-value">+1.66</div>
+        </div>
+      </div>
+
       <p class="footnote">Scale shown here: 1 = not knowledgeable, 5 = confident.</p>
     </div>
 
