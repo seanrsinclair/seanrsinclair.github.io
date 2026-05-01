@@ -1,0 +1,632 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131048124-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-131048124-1');
+</script>
+
+<title>Sean Sinclair - Searle Fellows Project</title>
+<link href="sinclair_files/css.css" rel="stylesheet">
+<style>
+  :root {
+    --accent: #007155;
+    --text: #222222;
+    --muted: #5a5a5a;
+    --paper: #ffffff;
+    --panel: #f4faf7;
+    --line: #d4e6df;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding-bottom: 75px;
+    background: linear-gradient(180deg, #f7f7f7 0%, #f3f8f5 100%);
+    color: var(--text);
+    font-family: 'Raleway', sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  a {
+    color: var(--text);
+  }
+
+  a:hover {
+    color: var(--accent);
+  }
+
+  header {
+    padding: 1em;
+    text-align: center;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid var(--accent);
+    margin: 0;
+  }
+
+  .hero,
+  .section,
+  .topic-card,
+  .experience-card,
+  .principle-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    box-shadow: 0 18px 36px rgba(0, 55, 39, 0.08);
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  }
+
+  .hero {
+    padding: 2rem;
+    margin: 1.6rem 0;
+    background:
+      radial-gradient(circle at right top, rgba(0, 113, 85, 0.1), transparent 30%),
+      linear-gradient(135deg, #ffffff 0%, #f4faf7 100%);
+  }
+
+  .hero-kicker {
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: 'Buenard', serif;
+    font-weight: 400;
+  }
+
+  .hero h2 {
+    margin: 0.4rem 0 0.75rem;
+    font-size: 2.1rem;
+  }
+
+  .hero p,
+  .section p,
+  .section li,
+  .topic-card p,
+  .topic-card li {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .hero p {
+    max-width: 52rem;
+    margin-bottom: 0;
+  }
+
+  .about-split {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 1.6rem;
+    align-items: center;
+  }
+
+  .about-photo {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: 0 14px 28px rgba(0, 55, 39, 0.11);
+  }
+
+  .about-copy h2 {
+    margin: 0.25rem 0 0.75rem;
+    font-size: 2.1rem;
+  }
+
+  .about-copy p {
+    max-width: 58rem;
+  }
+
+  .meta-grid,
+  .two-col,
+  .topics-grid,
+  .stats-grid,
+  .experience-grid,
+  .principles-grid {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .meta-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 1.4rem;
+  }
+
+  .meta-card {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 1rem 1.1rem;
+  }
+
+  .meta-label {
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .meta-value {
+    margin-top: 0.35rem;
+    line-height: 1.5;
+  }
+
+  .section {
+    padding: 1.5rem 1.6rem;
+    margin: 1.2rem 0;
+  }
+
+  .section h3 {
+    margin-top: 0;
+    margin-bottom: 0.7rem;
+    font-size: 1.55rem;
+  }
+
+  .section h3.project-header {
+    font-size: 1.9rem;
+  }
+
+  .section ul,
+  .topic-card ul {
+    padding-left: 1.2rem;
+    margin-bottom: 0;
+  }
+
+  .two-col {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .topics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 1rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1.3fr 0.8fr 1fr;
+    margin-top: 1rem;
+    align-items: stretch;
+  }
+
+  .experience-grid,
+  .principles-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 1rem;
+  }
+
+  .topic-card {
+    padding: 1.2rem 1.2rem 1.1rem;
+  }
+
+  .experience-card,
+  .principle-card {
+    padding: 1.2rem 1.2rem 1.1rem;
+  }
+
+  .topic-card h4 {
+    margin: 0 0 0.6rem;
+    font-family: 'Buenard', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+
+  .experience-card h4,
+  .principle-card h4 {
+    margin: 0 0 0.55rem;
+    font-family: 'Buenard', serif;
+    font-size: 1.24rem;
+    font-weight: 400;
+  }
+
+  .topic-card p {
+    margin-top: 0;
+  }
+
+  .experience-card p,
+  .principle-card p {
+    margin-top: 0;
+  }
+
+  .footnote {
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin-top: 0.9rem;
+  }
+
+  .goal-box {
+    margin-top: 1rem;
+    padding: 1rem 1.15rem;
+    border: 3px solid #e57a5b;
+    border-radius: 18px;
+    background: #fffdfa;
+    font-size: 1.15rem;
+    line-height: 1.5;
+    box-shadow: 0 14px 28px rgba(229, 122, 91, 0.12);
+  }
+
+  .stat-row {
+    display: contents;
+  }
+
+  .stat-head,
+  .stat-cell {
+    padding: 0.9rem 1rem;
+    background: #ffffff;
+    border: 1px solid var(--line);
+  }
+
+  .stat-head {
+    font-weight: 700;
+  }
+
+  .stat-cell strong {
+    font-size: 1.15rem;
+  }
+
+  .callout {
+    margin-top: 1rem;
+    font-family: 'Buenard', serif;
+    font-size: 1.9rem;
+    font-style: italic;
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  .lead {
+    font-size: 1.06rem;
+  }
+
+  .section:hover,
+  .topic-card:hover,
+  .experience-card:hover,
+  .principle-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(0, 113, 85, 0.18);
+    box-shadow: 0 22px 40px rgba(0, 55, 39, 0.1);
+  }
+
+  @media (max-width: 800px) {
+    .about-split,
+    .meta-grid,
+    .two-col,
+    .topics-grid,
+    .stats-grid,
+    .experience-grid,
+    .principles-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero,
+    .section {
+      padding: 1.25rem;
+    }
+
+    .hero h2 {
+      font-size: 1.75rem;
+    }
+  }
+</style>
+</head>
+
+<body>
+<div class="site-shell">
+  <header class="site-header">
+    <h1 class="site-title">Sean Sinclair</h1>
+    <p class="site-subtitle">Northwestern Searle Fellows Project</p>
+    <hr class="site-divider">
+    <nav class="site-nav">
+      <a href="https://seanrsinclair.github.io/index.html">Home</a>
+      <a href="https://seanrsinclair.github.io/sinclair-papers.html">Publications</a>
+      <a href="https://seanrsinclair.github.io/sinclair-teaching.html">Teaching</a>
+      <a href="https://seanrsinclair.github.io/sinclair-other.html">Other</a>
+    </nav>
+  </header>
+
+  <main class="page-content">
+    <div class="hero">
+      <div class="about-split">
+        <img class="about-photo" src="sinclair_files/photo.png" alt="Sean Sinclair">
+        <div class="about-copy">
+          <div class="hero-kicker">About Me</div>
+          <h2>Sean Sinclair</h2>
+          <p>
+            Sean Sinclair is an Assistant Professor at <a href="https://www.northwestern.edu/">Northwestern University</a>
+            in the <a href="https://www.mccormick.northwestern.edu/industrial/">Industrial Engineering and Management
+            Sciences</a> department. His research focuses on developing algorithms for data-driven sequential decision
+            making in societal applications.
+          </p>
+          <br>
+          <p>
+            His teaching-focused work emphasizes graduate student mentoring and helping undergraduate students connect technical topics to real-world
+            impact through <a href="https://www.mccormick.northwestern.edu/industrial/academics/courses/descriptions/365.html"><strong>IEMS 365: Analytics for Social Good</strong></a>. 
+            Before returning to graduate school, he spent two and a half years teaching mathematics, science, and
+            English in rural Ghana with the Peace Corps, an experience that continues to shape his approach to inclusive
+            participation, project-based learning, and classroom community.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Impact on Teaching Statement</h3>
+      <p class="lead">
+        My Searle Fellows work sharpened the difference between my earlier teaching philosophy and the practices I now
+        want to foreground through my teaching practice. The older statement emphasized social context and classroom trust. The updated statement
+        keeps those commitments while adding more deliberate rituals and classroom assessment techniques that support
+        collective learning.
+      </p>
+    </div>
+
+    <div class="section">
+      <h3>Old Teaching Philosophy</h3>
+
+      <div class="principles-grid">
+        <div class="principle-card">
+          <h4>Incorporating Social Issues in Technical Courses</h4>
+          <p>
+            My earlier teaching philosophy focused on integrating social issues into technical courses. In
+            <strong>IEMS 365: Analytics for Social Good</strong>, for example, students use analytics to examine
+            questions such as bias in AI, fairness in model design, and the organizational constraints faced by
+            public-interest partners. The goal is to show how technical topics in industrial engineering can be appplied to
+            public-sector problems.
+          </p>
+        </div>
+
+        <div class="principle-card">
+          <h4>Creating a Comfortable Risk-Taking Atmosphere</h4>
+          <p>
+            I also emphasized creating a classroom atmosphere where students feel comfortable taking intellectual risks.
+            Students learn more deeply when they can ask incomplete questions, test possible explanations, disagree
+            constructively, and make mistakes without feeling that one wrong answer will define their standing in the
+            class.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Updated Teaching Philosophy</h3>
+      <p>
+        My updated teaching philosophy places greater emphasis on the rituals that make collective learning possible.
+        Predictable routines help students know how to enter a discussion, how to listen to peers, and how to connect one class meeting to the next. These rituals are especially important
+        in project-based and discussion-based courses, where the students themselves becomes part of the course
+        infrastructure.
+      </p>
+      <p>
+        I now also think more explicitly about classroom assessment techniques as part of the learning process. Rather
+        than treating assessment only as a summative endpoint, I use low-stakes prompts, check-ins, reflection questions,
+        and student-generated exam questions to make student understanding visible throughout the course. Asking students
+        to write their own exam questions, for example, helps them identify what matters, anticipate how concepts can be
+        tested, and practice the judgment needed to separate whether they have a surface familiarity or a deep understanding of a topic.
+      </p>
+    </div>
+
+    <div class="section">
+      <h3 class="project-header">Summary of Project: IEMS 496 Academic Street Smarts</h3>
+      <p>
+        This portfolio centers on the creation of <strong>IEMS 496: Academic Street Smarts</strong>, a Winter 2026
+        professional development course for Northwestern IEMS PhD students.
+      </p>
+
+      <div class="meta-grid">
+        <div class="meta-card">
+          <div class="meta-label">Course Snapshot</div>
+          <div class="meta-value">
+            Winter 2026<br>
+            Tuesdays, 3:00 to 4:00 PM<br>
+            Tech C211
+          </div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">Project Focus</div>
+          <div class="meta-value">
+            Academic professional development<br>
+            Graduate student mentoring<br>
+            Hidden curriculum in doctoral training
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Need and Goal</h3>
+      <p>
+        The motivating premise behind the course is that many PhD students are expected to master the
+        academic system and associated professional skills without ever being explicitly taught them. Academic Street
+        Smarts addresses that gap by treating the hidden curriculum as something that should be revealed, discussed, and
+        practiced rather than left invisible.
+      </p>
+
+      <div class="goal-box">
+        <strong>Goal:</strong> Provide structured training in the informal skills needed for PhD success.
+      </div>
+
+      <div class="two-col" style="margin-top: 1rem;">
+        <div>
+          <p style="margin-top: 0;">
+            The course format was built around weekly discussion-based sessions, guest speakers from faculty and senior
+            PhD students, and practical conversation about how academic life works beyond the formal curriculum.
+          </p>
+          <ul>
+            <li>1-credit seminar format</li>
+            <li>weekly discussion sessions</li>
+            <li>guest speakers from faculty and senior PhD students</li>
+            <li>practice around presentation, communication, and professional judgment</li>
+          </ul>
+        </div>
+        <div>
+          <p style="margin-top: 0;">
+            Early survey responses reinforced the need for this type of training by showing low confidence in several
+            core dimensions of academic professional development.
+          </p>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-head">Topic</div>
+        <div class="stat-head">Mean</div>
+        <div class="stat-head">% Neutral or Below 3</div>
+
+        <div class="stat-cell">Understanding academic job market</div>
+        <div class="stat-cell"><strong>2.25</strong></div>
+        <div class="stat-cell"><strong>91.7%</strong></div>
+
+        <div class="stat-cell">Where to find fellowships/grants</div>
+        <div class="stat-cell"><strong>2.33</strong></div>
+        <div class="stat-cell"><strong>83.3%</strong></div>
+
+        <div class="stat-cell">Importance of professional service</div>
+        <div class="stat-cell"><strong>2.67</strong></div>
+        <div class="stat-cell"><strong>83.3%</strong></div>
+
+        <div class="stat-cell">Ability to summarize or pitch research</div>
+        <div class="stat-cell"><strong>2.75</strong></div>
+        <div class="stat-cell"><strong>75.0%</strong></div>
+      </div>
+
+      <p class="callout">Students lack knowledge about the academic system and core skills, but these are rarely taught.</p>
+      <p class="footnote">Scale shown here: 1 = not knowledgeable, 5 = confident.</p>
+    </div>
+
+    <div class="two-col">
+      <div class="section">
+        <h3>Course Description</h3>
+        <p>
+          The series is aimed at first-year PhD students in IEMS and focuses on balancing research, teaching, and
+          service; understanding the publication process; and building the soft skills essential for a successful
+          academic career. Sessions are conversational and led by a mix of senior PhD students and faculty.
+        </p>
+        <p>
+          Although the primary audience is first-year students, later-year PhD students are also invited. The longer-term
+          goal is to offer the series annually so that each incoming cohort receives consistent guidance while
+          strengthening the department's culture of community and professional development.
+        </p>
+      </div>
+
+      <div class="section">
+        <h3>Seminar Reflection Component</h3>
+        <p>
+          For sessions that immediately follow a seminar presentation, the first 15 minutes are reserved for discussion
+          of the seminar itself. These conversations focus on:
+        </p>
+        <ul>
+          <li>the content and presentation style of the talk,</li>
+          <li>potential future research directions and open questions, and</li>
+          <li>lessons about effective communication and framing of research.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Syllabus Topics</h3>
+      <p>
+        The course is organized around guided conversations rather than formal lectures. The topics below reflect the
+        Winter 2026 syllabus.
+      </p>
+
+      <div class="topics-grid">
+        <div class="topic-card">
+          <h4>Orientation and Seminar Listening</h4>
+          <p>
+            Introduces community norms, expectations for discussion, and strategies for getting more out of research
+            seminars.
+          </p>
+          <ul>
+            <li>open communication norms and shared expectations,</li>
+            <li>how to listen to a research talk, and</li>
+            <li>completion of pre-surveys.</li>
+          </ul>
+        </div>
+
+        <div class="topic-card">
+          <h4>Advice to a First-Year PhD, Part I</h4>
+          <p>Conversation led by two second-year PhD students on early program navigation.</p>
+          <ul>
+            <li>core courses, funding conversations, and work-life balance,</li>
+            <li>reaching out to potential advisors, and</li>
+            <li>expectations around candidacy and early research progress.</li>
+          </ul>
+        </div>
+
+        <div class="topic-card">
+          <h4>Advice to a First-Year PhD, Part II</h4>
+          <p>Conversation led by senior PhD students on later-stage decisions in the program.</p>
+          <ul>
+            <li>prospectus expectations and research output timelines,</li>
+            <li>conference participation and external collaborations, and</li>
+            <li>co-advising, course selection, and common regrets.</li>
+          </ul>
+        </div>
+
+        <div class="topic-card">
+          <h4>Internships and Research Labs</h4>
+          <p>Explores summer opportunities and industry-facing professional development.</p>
+          <ul>
+            <li>industry internships, research labs, and research visits,</li>
+            <li>job-market preparation after graduation, and</li>
+            <li>networking through conferences and the INFORMS community.</li>
+          </ul>
+        </div>
+
+        <div class="topic-card">
+          <h4>Research Landscape and Academic Communities</h4>
+          <p>Discusses how students situate their work within research fields and professional communities.</p>
+          <ul>
+            <li>journals versus conferences and building collaborations,</li>
+            <li>how to identify promising dissertation-scale problems, and</li>
+            <li>navigating prestige, research taste, and reviewer feedback.</li>
+          </ul>
+        </div>
+
+        <div class="topic-card">
+          <h4>Grants, Funding, and Fellowships</h4>
+          <p>Focuses on how PhD students think about financial support and opportunity structures.</p>
+          <ul>
+            <li>fellowship opportunities and application strategy,</li>
+            <li>grant and funding structures for PhD students, and</li>
+            <li>the distinction between RA and TA support.</li>
+          </ul>
+        </div>
+
+        <div class="topic-card">
+          <h4>Publishing Steps and Reviewing</h4>
+          <p>Covers the mechanics and judgment involved in publishing research.</p>
+          <ul>
+            <li>journal versus conference submission processes,</li>
+            <li>revisions, resubmissions, and handling critical reviews, and</li>
+            <li>writing and positioning research effectively.</li>
+          </ul>
+        </div>
+
+        <div class="topic-card">
+          <h4>Academic Job Market and Department Types</h4>
+          <p>Examines different academic career paths and what departments value in candidates.</p>
+          <ul>
+            <li>tenure-track versus teaching-track roles,</li>
+            <li>differences across departments such as ECE, CS, OR, and business schools, and</li>
+            <li>how to think about fit, affinity, and placement strengths.</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+</div>
+</body>
+</html>
